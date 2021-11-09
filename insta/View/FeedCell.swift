@@ -47,14 +47,14 @@ class FeedCell:UICollectionViewCell{
     
     private lazy var commentButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "heart"),for: .normal)
+        button.setImage(UIImage(named:"heart-2"),for: .normal)
         button.tintColor = .black
         return button
     }()
     
     private lazy var shareButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "heart"),for: .normal)
+        button.setImage(#imageLiteral(resourceName: "heart-2"),for: .normal)
         button.tintColor = .black
         return button
     }()

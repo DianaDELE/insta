@@ -34,13 +34,13 @@ class FeedCell:UICollectionViewCell{
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.isUserInteractionEnabled = true
-        iv.image = #imageLiteral(resourceName: "DragonCity")
+        iv.image = #imageLiteral(resourceName: "severide")
         return iv
     }()
     
     private lazy var likeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "heart"),for: .normal)
+        button.setImage(UIImage(named:"heart-2"),for: .normal)
         button.tintColor = .black
         return button
     }()

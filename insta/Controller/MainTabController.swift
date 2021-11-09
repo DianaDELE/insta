@@ -20,7 +20,7 @@ class MainTabController: UITabBarController{
     //CREAMOS INSTANCIAS DE NUESTROS BOTONER DE BAR
     func configureViewControllers() {
         //LOS PARENTESIS SON LOS CONTRUCTORES
-        view.backgroundColor = .white
+        view.backgroundColor = .black
         let layout = UICollectionViewFlowLayout()
         let feed = templateNavigationController(unselectedImage: #imageLiteral(resourceName: "home-2"),selectedImage: #imageLiteral(resourceName: "home"), rootViewController: FeedController(collectionViewLayout: layout))
         

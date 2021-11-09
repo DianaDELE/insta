@@ -14,7 +14,7 @@ class FeedCell:UICollectionViewCell{
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        iv.isUserInteractionEnabled = true
+        iv.isUserInteractionEnabled = true 
         iv.image = #imageLiteral(resourceName: "DragonCity")
         return iv
     }()

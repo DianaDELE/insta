@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //se uso para llamar de controller la vista maintabcontroller
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = MainTabController()
+        //window?.rootViewController = MainTabController()
+        window?.rootViewController = UINavigationController(rootViewController: LoginController())
         window?.makeKeyAndVisible()
     }
 

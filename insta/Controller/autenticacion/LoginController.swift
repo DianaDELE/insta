@@ -11,7 +11,7 @@ class LoginController: UIViewController{
     //MARK: - Properties
     
     private let iconImage: UIImageView = {
-        let iv = UIImageView(image: #imageLiteral(resourceName: "plus-2"))
+        let iv = UIImageView(image: #imageLiteral(resourceName: "icons8-mapamundi-64.png"))
         iv.contentMode = .scaleAspectFill
         return iv
     }()
@@ -50,6 +50,15 @@ class LoginController: UIViewController{
         button.backgroundColor = .systemPurple
         button.layer.cornerRadius = 5
         button.setHeight(50)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        return button
+    }()
+    
+    
+    private let dontHaveAccount: UIButton = {
+        let button = UIButton(type: .system)
+        
+        
         return button
     }()
     

@@ -4,7 +4,7 @@
 //
 //  Created by Karen De Luna on 04/11/21.
 //
-//este no se guardo
+//este no se guardo no sé
 import UIKit
 
 class CustomTextField: UITextField {

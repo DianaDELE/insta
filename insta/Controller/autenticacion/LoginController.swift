@@ -17,28 +17,13 @@ class LoginController: UIViewController{
     }()
     
     private let emailTextField: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .none
-        tf.textColor = .white
-        tf.keyboardAppearance = .dark
+        let tf = CustomTextField(placeholder: "EMAIL")
         tf.keyboardType = .emailAddress
-        //para la transparencia
-        tf.backgroundColor = UIColor(white:1, alpha: 0.1)
-        tf.setHeight(50)
-        tf.attributedPlaceholder = NSAttributedString(string: "EMAIL",attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.7)])
         return tf
     }()
     
     private let passwordTextField: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .none
-        tf.textColor = .white
-        tf.keyboardAppearance = .dark
-        tf.keyboardType = .emailAddress
-        //para la transparencia
-        tf.backgroundColor = UIColor(white:1, alpha: 0.1)
-        tf.setHeight(50)
-        tf.attributedPlaceholder = NSAttributedString(string: "CONTRASEÑA",attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.7)])
+        let tf = CustomTextField(placeholder: "PASSWORD")
         tf.isSecureTextEntry = true
         return tf
     }()
@@ -49,16 +34,22 @@ class LoginController: UIViewController{
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemPurple
         button.layer.cornerRadius = 5
-        button.setHeight(50)
+        button.setHeight(50) 
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        return button
+    }()
+
+
+    private let forgotPasswordButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.attributedTitle(firstPart: "Olvido su password?  ", secondPart: "Ayuda para entrar a mi cuenta" )
         return button
     }()
     
     
-    private let dontHaveAccount: UIButton = {
+    private let dontHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
-        
-        
+        button.attributedTitle(firstPart: "No tienes una cuenta?  ", secondPart: "Entrar" )
         return button
     }()
     
@@ -91,11 +82,16 @@ class LoginController: UIViewController{
         
         
         //bloque de contraseña e email
-        let stack = UIStackView(arrangedSubviews: [emailTextField,passwordTextField, loginButton])
+        let stack = UIStackView(arrangedSubviews: [emailTextField,passwordTextField, loginButton, forgotPasswordButton])
         stack.axis = .vertical
         stack.spacing = 20
         
         view.addSubview(stack)
         stack.anchor(top: iconImage.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 32, paddingLeft: 32,paddingRight: 32)
+
+        view.addSubview(dontHaveAccountButton)
+        dontHaveAccountButton.centerX(inView: view)
+        //safeAreaLayoutGuide es para que corra en cualquier dispositivo sin importar el tamaño de la pantalla, ejemplo iphone 7 y iphone X
+        dontHaveAccountButton.anchor(button: view.safeAreaLayoutGuide.bottomAnchor)
     }
 }

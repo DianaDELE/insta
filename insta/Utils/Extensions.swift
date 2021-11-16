@@ -6,6 +6,17 @@
 //
 
 import UIKit
+
+extension UIViewController{
+    func configureGradientLayer(){
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.systemCyan.cgColor, UIColor.systemBlue.cgColor]
+        //empieza hasta arriba 0, termina hasta abajo 1
+        gradient.locations = [0,1]
+        view.layer.addSublayer(gradient)
+        gradient.frame = view.frame
+    }
+}
 //import JGProgressHUD
 
 /*extension UIViewController {
